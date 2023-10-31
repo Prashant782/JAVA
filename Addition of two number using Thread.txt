@@ -1,0 +1,29 @@
+import java.util.*;
+class WorkerThread extends Thread{
+int x,y;
+WorkerThread(int n1 ,int n2){
+x=n1;
+y=n2;
+}
+public void run() {
+int result=x+y;
+onResult(result);
+}
+void onResult(int result) {
+System.out.println("Recived result from the thread: "+result);
+
+}
+}
+public class Indirectapp {
+
+public static void main(String[] args) {
+    // TODO Auto-generated method stub
+    Scanner sc=new Scanner(System.in);
+    int a,b;
+    System.out.println("Enter a and b ");
+    a=sc.nextInt();
+    b=sc.nextInt();
+    WorkerThread WorkerThread=new WorkerThread(a,b);
+    WorkerThread.start();
+}
+}
