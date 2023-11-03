@@ -1,0 +1,19 @@
+import java.util.*;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
+public class obj01 {
+public static void main(String[] args) {
+    // TODO Auto-generated method stub
+    //without user input String website = "google.com";
+    Scanner sc=new Scanner(System.in);
+    System.out.println("Enter the websites");
+    String n=sc.nextLine();
+    try {
+    InetAddress ipAddress = InetAddress.getByName(n);
+    System.out.println("IP Address of " + n + ": " + ipAddress.getHostAddress());
+    }
+    catch(UnknownHostException e){
+        System.out.println("Could not find IP address.");
+    }   
+  }
+}
