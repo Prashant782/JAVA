@@ -1,0 +1,22 @@
+import java.io.;
+import java.net.;
+import java.util.*;
+public class obj01 {
+
+public static void main(String[] args) throws Exception {
+    // TODO Auto-generated method stub
+  System.out.println("Enter the URL= ");
+  Scanner sc=new Scanner(System.in);
+  String website=sc.nextLine();
+  URL u=new URI(website).toURL();
+  BufferedReader in = new BufferedReader(new InputStreamReader(u.openStream()));
+  String readLine;
+  while((readLine=in.readLine())!=null) {
+      System.out.println(readLine);
+
+  }
+  in.close();
+  sc.close();
+    }
+
+}
