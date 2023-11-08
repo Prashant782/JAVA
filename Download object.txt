@@ -1,0 +1,15 @@
+import java.io.;
+import java.net.;
+import java.util.*;
+public class obj01b {
+public static void main(String[] args) throws Exception{
+    // TODO Auto-generated method stub
+    System.out.println("Enter the URL");
+    Scanner sc=new Scanner(System.in);
+    String website=sc.nextLine();
+    URL u=new URI(website).toURL();
+    Object o=u.getContent();
+    System.out.println("a is="+o.getClass().getName());
+
+ }
+}
