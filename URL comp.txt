@@ -1,0 +1,11 @@
+import java.net.URL;
+public class obj02 {
+
+public static void main(String[] args) throws Exception{
+    // TODO Auto-generated method stub
+
+        URL url1=new URL("https://www.google.com/search?q=kantipur+tv&rlz=1C1CHBF_enIN1016IN1016&oq=kantipu&gs_lcrp=EgZjaHJvbWUqDQgBEAAYgwEYsQMYgAQyDQgAEAAYgwEYsQMYgAQyDQgBEAAYgwEYsQMYgAQyDQgCEAAYgwEYsQMYgAQyDQgDEAAYgwEYsQMYgAQyBggEEEUYOTIHCAUQLhiABDINCAYQABiDARixAxiABDINCAcQABiDARixAxiABDIHCAgQABiABDIHCAkQABiABNIBCDcxODJqMWo3qAIAsAIA&sourceid=chrome&ie=UTF-8");
+        URL url2 =new URL("https://www.google.com/search?q=kantipur+tv&rlz=1C1CHBF_enIN1016IN1016&oq=kantipu&gs_lcrp=EgZjaHJvbWUqDQgBEAAYgwEYsQMYgAQyDQgAEAAYgwEYsQMYgAQyDQgBEAAYgwEYsQMYgAQyDQgCEAAYgwEYsQMYgAQyDQgDEAAYgwEYsQMYgAQyBggEEEUYOTIHCAUQLhiABDINCAYQABiDARixAxiABDINCAcQABiDARixAxiABDIHCAgQABiABDIHCAkQABiABNIBCDcxODJqMWo3qAIAsAIA&sourceid=chrome&ie=UTF-8");
+        System.out.println("Matching url : "+url1.equals(url2));        
+    }
+}
