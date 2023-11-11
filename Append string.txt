@@ -1,0 +1,22 @@
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class AppendStringToFile {
+    public static void main(String[] args) {
+        
+        String filePath = "E:\JAVA Solution/file.txt";
+        String stringToAppend = "This is the string to append.";
+
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath, true))) {
+     
+            writer.write(stringToAppend);
+            writer.newLine();
+	 System.out.println("String appended to the file successfully.");
+
+        } catch (IOException e) {
+
+            System.err.println("Error appending string to file: " + e.getMessage());
+        }
+    }
+}
