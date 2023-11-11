@@ -1,0 +1,24 @@
+import java.io.FileWriter;
+import java.io.BufferedWriter;
+import java.io.IOException;
+
+public class CreateTextFile {
+    public static void main(String[] args) {
+        String fileName = "example.txt";
+
+        try {
+            FileWriter fileWriter = new FileWriter(fileName)
+            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+            bufferedWriter.write("Hello, this is a sample text file!");
+            bufferedWriter.newLine(); // Add a newline for better readability
+            bufferedWriter.write("You can add more lines if needed.");
+
+            bufferedWriter.close();
+
+            System.out.println("Data has been written to the file.");
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
