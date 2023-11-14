@@ -1,0 +1,29 @@
+import java.net.*;
+
+public class UDPClient {
+    public static void main(String[] args) {
+    
+        String serverHost = "localhost";
+        int serverPort = 9876;
+
+        try {
+            
+            DatagramSocket socket = new DatagramSocket();
+
+            String message = "Hello, UDP Server!";
+            byte[] sendData = message.getBytes();
+
+          
+            InetAddress serverAddress = InetAddress.getByName(serverHost);
+            DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, serverAddress, serverPort);
+
+            socket.send(sendPacket);
+
+            System.out.println("Message sent to the server.");
+
+            socket.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
