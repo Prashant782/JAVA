@@ -1,0 +1,28 @@
+import java.net.DatagramPacket;
+import java.net.DatagramSocket;
+
+public class UDPServer {
+    public static void main(String[] args) {
+        int port = 9876;
+
+        try {
+            DatagramSocket serverSocket = new DatagramSocket(port);
+
+            System.out.println("UDP Server is running on port " + port);
+            byte[] receiveData = new byte[1024];
+
+            while (true) {
+                DatagramPacket receivePacket = new DatagramPacket(receiveData, receiveData.length);
+
+                serverSocket.receive(receivePacket);
+                String receivedMessage = new String(receivePacket.getData(), 0, receivePacket.getLength());
+
+                System.out.println("Received from client: " + receivedMessage);
+                System.out.println("Client address: " + receivePacket.getAddress());
+                System.out.println("Client port: " + receivePacket.getPort());
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
