@@ -1,0 +1,23 @@
+import org.apache.commons.net.ftp.FTP;
+import org.apache.commons.net.ftp.FTPClient;
+
+import java.io.*;
+
+public class FTPClientExample {
+    public static void main(String[] args) {
+        FTPClient ftpClient = new FTPClient();
+        try {
+            ftpClient.connect("ftp.example.com");
+            ftpClient.login("username", "password");
+
+            FileInputStream fis = new FileInputStream(new File("file.txt"));
+            ftpClient.storeFile("remoteFile.txt", fis);
+
+            fis.close();
+            ftpClient.logout();
+            ftpClient.disconnect();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
