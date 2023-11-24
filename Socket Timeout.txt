@@ -1,0 +1,13 @@
+import java.io.*;
+import java.net.*;
+
+public class SocketTimeoutExample {
+    public static void main(String[] args) {
+        try {
+            Socket socket = new Socket();
+            socket.connect(new InetSocketAddress("daraz.com", 80), 5000); // 5 seconds timeout
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
