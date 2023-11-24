@@ -1,0 +1,17 @@
+import java.net.*;
+
+public class DatagramSocketTimeoutExample {
+    public static void main(String[] args) throws Exception {
+        DatagramSocket socket = new DatagramSocket();
+        socket.setSoTimeout(5000); // 5 seconds timeout
+
+        InetAddress serverAddress = InetAddress.getByName("daraz.com");
+        String message = "Hello, server!";
+        byte[] sendData = message.getBytes();
+
+        DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, serverAddress, 9876);
+        socket.send(sendPacket);
+
+        socket.close();
+    }
+}
