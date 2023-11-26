@@ -1,0 +1,22 @@
+import java.rmi.*;
+import java.rmi.server.*;
+
+public class RMIServer extends UnicastRemoteObject implements RMIServerInterface {
+    public RMIServer() throws RemoteException {
+        super();
+    }
+
+    public String sayHello() throws RemoteException {
+        return "Hello from RMI Server!";
+    }
+
+    public static void main(String[] args) throws RemoteException {
+        try {
+            RMIServer server = new RMIServer();
+            Naming.rebind("RMIServer", server);
+            System.out.println("Server is running...");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
