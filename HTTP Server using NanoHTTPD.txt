@@ -1,0 +1,22 @@
+import fi.iki.elonen.NanoHTTPD;
+
+public class SimpleHTTPServer extends NanoHTTPD {
+    public SimpleHTTPServer() throws IOException {
+        super(8080);
+        start(NanoHTTPD.SOCKET_READ_TIMEOUT, false);
+        System.out.println("Server started on port 8080");
+    }
+
+    public Response serve(IHTTPSession session) {
+        String response = "<html><body><h1>Hello, NanoHTTPD!</h1></body></html>";
+        return newFixedLengthResponse(response);
+    }
+
+    public static void main(String[] args) {
+        try {
+            new SimpleHTTPServer();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
