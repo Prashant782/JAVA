@@ -1,0 +1,23 @@
+class Anagram {
+    static int areAnagram(String S1, String S2) {
+        // Create a hash array and initialize all values as 0
+        int[] hash = new int[256];
+        for (int i = 0; i < 256; i++) hash[i] = 0;
+        int i;
+        if (S1.length() != S2.length()) return 0;
+        // For each character in input strings, increment hash in
+        // the corresponding hash array
+        for (i = 0; i < S1.length(); i++) {
+            hash[(int)S1.charAt(i)]++;
+            hash[(int)S2.charAt(i)]--;
+        }
+
+        // If both strings are of different length. Removing this condition
+        // will make the program fail for strings like "aaca" and "aca"
+
+        // See if there is any non-zero value in hash array
+        for (i = 0; i < 256; i++)
+            if (hash[i] != 0) return 0;
+        return 1;
+    }
+};
