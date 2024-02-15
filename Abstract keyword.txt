@@ -1,0 +1,8 @@
+class B extends A 
+{
+    //Method m1 takes two parameters p and q
+    //and multiplies them to get the product
+    void m1(int p,int q) {
+       prod=p*q;
+    }
+}
